@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-//Snack 1 numeri
+//Snack 1 istruzioni condizionali
 
 /* int num1;
 int num2;
@@ -34,10 +34,10 @@ if (parola1 != null && parola2 != null)
 else
     Console.WriteLine("Non puoi inserire parole nulle"); */
 
-// Snack 2 
+// Snack 2 - Ciclo For
 
 
-int[] userNum = new int[10];
+/*int[] userNum = new int[10];
 
 
 Console.WriteLine("inserisci 10 numeri in successione");
@@ -61,5 +61,24 @@ int sumUserNumMin2 = userNumMin2.Sum();
 int avgUserNum= userNumMin2.Sum() / userNumMin2.Length;
 
 Console.WriteLine($"La somma dei numeri inseriti è: {userNumSum}");
-Console.WriteLine($"La somma degli ultimi 8 numeri inseriti è: {sumUserNumMin2} e la loro media è: {avgUserNum}");
+Console.WriteLine($"La somma degli ultimi 8 numeri inseriti è: {sumUserNumMin2} e la loro media è: {avgUserNum}");*/
+
+
+//Snack 3 - Operatore modulo
+
+Console.WriteLine("Inserisci un numero");
+
+int numEvenOdd;
+if (int.TryParse(Console.ReadLine(), out numEvenOdd))
+{
+    if (numEvenOdd % 2 == 0)
+        Console.WriteLine($"Il numero che hai inserito ({numEvenOdd}) è pari");
+    else
+        Console.WriteLine($"Il numero pari più vicino a quello da te indicato è: {numEvenOdd + 1}");
+}
+else
+    Console.WriteLine("Il numero non è valido");
+
+
+
 
