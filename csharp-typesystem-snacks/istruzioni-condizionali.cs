@@ -1,6 +1,8 @@
-﻿//Snack 1 numeri
+﻿using System.Linq;
 
-int num1;
+//Snack 1 numeri
+
+/* int num1;
 int num2;
 
 Console.WriteLine("Inserisci due numeri in successione");
@@ -15,7 +17,6 @@ if (int.TryParse(Console.ReadLine(), out num1) && int.TryParse(Console.ReadLine(
 else
     Console.WriteLine("Non hai inserito numeri validi");
 
-// Snack 1 parole
 
 Console.WriteLine("Inserisci due parole in successione");
 
@@ -31,4 +32,34 @@ if (parola1 != null && parola2 != null)
         Console.WriteLine($"Le due parole ({parola1} e {parola2}) sono di uguale lunghezza");
 }
 else
-    Console.WriteLine("Non puoi inserire parole nulle");
+    Console.WriteLine("Non puoi inserire parole nulle"); */
+
+// Snack 2 
+
+
+int[] userNum = new int[10];
+
+
+Console.WriteLine("inserisci 10 numeri in successione");
+
+for (int i = 0; i < userNum.Length; i++)
+{
+    int num;
+    if (int.TryParse(Console.ReadLine(), out num))
+    {
+        userNum[i] = num;
+    }
+
+    else
+        Console.WriteLine("Inserisci numeri validi");
+}
+
+int[] userNumMin2 = new int[8];
+Array.Copy(userNum, 0, userNumMin2, 0, 8);
+int userNumSum = userNum.Sum();
+int sumUserNumMin2 = userNumMin2.Sum();
+int avgUserNum= userNumMin2.Sum() / userNumMin2.Length;
+
+Console.WriteLine($"La somma dei numeri inseriti è: {userNumSum}");
+Console.WriteLine($"La somma degli ultimi 8 numeri inseriti è: {sumUserNumMin2} e la loro media è: {avgUserNum}");
+
