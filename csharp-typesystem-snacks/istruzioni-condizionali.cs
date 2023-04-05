@@ -37,7 +37,7 @@ else
 // Snack 2 - Ciclo For
 
 
-int[] userNum = new int[10];
+/*int[] userNum = new int[10];
 int sumPartial = 0;
 
 Console.WriteLine("inserisci 10 numeri in successione");
@@ -66,7 +66,7 @@ int sumUserNumMin2 = userNumMin2.Sum();
 int avgUserNum = userNumMin2.Sum() / userNumMin2.Length;*/
 
 //metodo senza copia di array
-int userNumSum = userNum.Sum();
+/*int userNumSum = userNum.Sum();
 
 
 
@@ -178,21 +178,29 @@ Console.WriteLine($"Perfetto. La somma dei numeri inseriti è: {numSnack5Sum}");
 
 //Random
 
-//Console.WriteLine("Digita un numero casuale");
-//int userRandNum;
-//if(int.TryParse(Console.ReadLine(), out userRandNum))
-//{
-//    int[] arrSquare = new int[userRandNum];
-//    for (int i = 0; i < userRandNum; i++)
-//    {
-//        int[] randomArr = new int[10];
-//        for(int a=0; a < randomArr.Length; a++)
-//        {
-//            Random casualNum = new Random();
-
-//            randomArr[a] = casualNum;
-//        }
-//    }
-//}
-
+Console.WriteLine("Digita un numero casuale");
+int userRandNum;
+if(int.TryParse(Console.ReadLine(), out userRandNum))
+{
+    int[][] arrSquare = new int[userRandNum][];
+    int[] randomArr = new int[10];
+    for (int i = 0; i < userRandNum; i++)
+    {
         
+        for (int a = 0; a < randomArr.Length; a++)
+        {
+            Random rnd = new Random();
+            int casualNum= rnd.Next(100, 1000);
+
+            randomArr[a] = casualNum;
+        }
+        arrSquare[i] = randomArr;
+    }
+    for(int i = 0;i < arrSquare.Length; i++)
+    {
+        Console.WriteLine($"insieme numero {i+1} di 10 numeri casuali");
+        foreach (int a in arrSquare[i]) Console.WriteLine(a);
+    }
+   
+}
+
