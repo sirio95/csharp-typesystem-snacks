@@ -140,7 +140,7 @@ foreach (int num in arrNumOdd) Console.WriteLine(num);
 
 
 Console.WriteLine($"Invece i numeri pari sono:");
-foreach (int num in arrNumEven) Console.WriteLine(num); */
+foreach (int num in arrNumEven) Console.WriteLine(num); 
 
 //somma numeri ad indice dispari
 
@@ -182,27 +182,35 @@ Console.WriteLine("Digita un numero casuale");
 int userRandNum;
 if(int.TryParse(Console.ReadLine(), out userRandNum))
 {
-    int[][] arrSquare = new int[userRandNum][];
-    int[] randomArr = new int[10];
-    for (int i = 0; i < userRandNum; i++)
+    if (userRandNum > 0)
     {
-        
-        for (int a = 0; a < randomArr.Length; a++)
+        int[][] arrSquare = new int[userRandNum][];
+        int[] randomArr = new int[10];
+        for (int i = 0; i < userRandNum; i++)
         {
-            Random rnd = new Random();
-            int casualNum= rnd.Next(100, 1000);
 
-            randomArr[a] = casualNum;
+            for (int a = 0; a < randomArr.Length; a++)
+            {
+                Random rnd = new Random();
+                int casualNum = rnd.Next(100, 1000);
+
+                randomArr[a] = casualNum;
+            }
+            arrSquare[i] = randomArr;
         }
-        arrSquare[i] = randomArr;
+        for (int i = 0; i < arrSquare.Length; i++)
+        {
+            Console.WriteLine($"insieme numero {i + 1} di 10 numeri casuali");
+            foreach (int a in arrSquare[i]) Console.WriteLine(a);
+        }
     }
-    for(int i = 0;i < arrSquare.Length; i++)
-    {
-        Console.WriteLine($"insieme numero {i+1} di 10 numeri casuali");
-        foreach (int a in arrSquare[i]) Console.WriteLine(a);
-    }
+    else
+        Console.WriteLine("Non puoi inserire numeri negativi");
+    
    
 }
+else
+    Console.WriteLine("Il numero non è valido");
 
 
 
