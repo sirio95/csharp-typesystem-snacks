@@ -178,7 +178,7 @@ Console.WriteLine($"Perfetto. La somma dei numeri inseriti è: {numSnack5Sum}");
 
 //Random
 
-Console.WriteLine("Digita un numero casuale");
+/*Console.WriteLine("Digita un numero casuale");
 int userRandNum;
 if(int.TryParse(Console.ReadLine(), out userRandNum))
 {
@@ -203,4 +203,52 @@ if(int.TryParse(Console.ReadLine(), out userRandNum))
     }
    
 }
+*/
 
+
+// Snack 6- Funzioni
+
+
+// parole lunghe
+
+Console.WriteLine("Inserisci due parole");
+
+string word1 = Console.ReadLine();
+string word2 = Console.ReadLine();
+
+if(word1 != null &&  word2 != null)
+{
+    LongestWord(word1, word2);
+}
+else
+{
+    Console.WriteLine("Le parole inserite non sono valide");
+}
+static void LongestWord(string word1, string word2)
+{
+    if (word1.Length == word2.Length) 
+        Console.WriteLine($"le due parole ({word1} e {word2}) hanno la stessa lunghezza");
+    else if(word1.Length < word2.Length)
+        Console.WriteLine($"{word2} è più lunga");
+    else
+        Console.WriteLine($"{word1} è più lunga");
+}
+
+
+//numeri pari o dispari? Funzion(e)?
+
+int primo;
+
+Console.WriteLine("Inserisci un numero casuale");
+
+if (int.TryParse(Console.ReadLine(), out primo))
+{
+    EvenOdd(primo);
+}
+else Console.WriteLine("Il numero inserito non è valido");
+
+static void EvenOdd(int primo)
+{
+    if (primo % 2 == 0) Console.WriteLine($"{primo} è pari");
+    else Console.WriteLine($"{primo} è dispari");
+}
