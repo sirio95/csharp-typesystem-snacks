@@ -2,7 +2,7 @@
 
 //Snack 1 istruzioni condizionali
 
-/* int num1;
+int num1;
 int num2;
 
 Console.WriteLine("Inserisci due numeri in successione");
@@ -32,12 +32,12 @@ if (parola1 != null && parola2 != null)
         Console.WriteLine($"Le due parole ({parola1} e {parola2}) sono di uguale lunghezza");
 }
 else
-    Console.WriteLine("Non puoi inserire parole nulle"); */
+    Console.WriteLine("Non puoi inserire parole nulle"); 
 
 // Snack 2 - Ciclo For
 
 
-/*int[] userNum = new int[10];
+int[] userNum = new int[10];
 int sumPartial = 0;
 
 Console.WriteLine("inserisci 10 numeri in successione");
@@ -66,7 +66,7 @@ int sumUserNumMin2 = userNumMin2.Sum();
 int avgUserNum = userNumMin2.Sum() / userNumMin2.Length;*/
 
 //metodo senza copia di array
-/*int userNumSum = userNum.Sum();
+int userNumSum = userNum.Sum();
 
 
 
@@ -76,7 +76,7 @@ Console.WriteLine($"La somma degli ultimi 8 numeri inseriti è: {sumPartial} e l
 
 //Snack 3 - Operatore modulo
 
-/*Console.WriteLine("Inserisci un numero");
+Console.WriteLine("Inserisci un numero");
 
 int numEvenOdd;
 if (int.TryParse(Console.ReadLine(), out numEvenOdd))
@@ -88,13 +88,13 @@ if (int.TryParse(Console.ReadLine(), out numEvenOdd))
 }
 else
     Console.WriteLine("Il numero non è valido");
-*/
+
 
 //Snack 4- Array
 
 //festa fitzgerald
 
-/* string[] partyname = { "nome1", "nome2", "nome3", "nome4", "nome5", "nome6", "nome7", "nome8", "nome9", "nome10" };
+string[] partyname = { "nome1", "nome2", "nome3", "nome4", "nome5", "nome6", "nome7", "nome8", "nome9", "nome10" };
 
 Console.WriteLine("Inserisci il tuo nome per vedere se sei invitato a festa Gatsby");
 string? userName = Console.ReadLine();
@@ -140,7 +140,7 @@ foreach (int num in arrNumOdd) Console.WriteLine(num);
 
 
 Console.WriteLine($"Invece i numeri pari sono:");
-foreach (int num in arrNumEven) Console.WriteLine(num);
+foreach (int num in arrNumEven) Console.WriteLine(num); */
 
 //somma numeri ad indice dispari
 
@@ -152,18 +152,18 @@ var sumOdd = new List<int>();
 
 for (int i = 0; i < arrSumOdd.Length; i++)
 {
-    if (arrSumOdd[i] % 2 != 0) sumOdd.Add(arrSumOdd[i]);
+    if ((i + 1) % 2 != 0) sumOdd.Add(arrSumOdd[i]);
 }
 int[] sumTotalOdd = sumOdd.ToArray();
 int sumTotal = sumTotalOdd.Sum();
 
 Console.WriteLine($"La somma totale degli elementi a indice dispari dell'array è: {sumTotal}");
 
-*/
+
 
 // Snack 5- Ciclo While
 
-/*Console.WriteLine("Devi continuare a inserire numeri fino a quando la loro somma non sarà maggiore o uguale a 50");
+Console.WriteLine("Devi continuare a inserire numeri fino a quando la loro somma non sarà maggiore o uguale a 50");
 
 var numSnack5= new List<int>();
 
@@ -174,11 +174,11 @@ while(numSnack5.Sum() <= 50)
         numSnack5.Add(newNum);
 }
 int numSnack5Sum=numSnack5.Sum();
-Console.WriteLine($"Perfetto. La somma dei numeri inseriti è: {numSnack5Sum}");*/
+Console.WriteLine($"Perfetto. La somma dei numeri inseriti è: {numSnack5Sum}");
 
 //Random
 
-/*Console.WriteLine("Digita un numero casuale");
+Console.WriteLine("Digita un numero casuale");
 int userRandNum;
 if(int.TryParse(Console.ReadLine(), out userRandNum))
 {
@@ -203,20 +203,20 @@ if(int.TryParse(Console.ReadLine(), out userRandNum))
     }
    
 }
-*/
+
 
 
 // Snack 6- Funzioni
 
 
-// parole lunghe
+//parole lunghe
 
 Console.WriteLine("Inserisci due parole");
 
 string word1 = Console.ReadLine();
 string word2 = Console.ReadLine();
 
-if(word1 != null &&  word2 != null)
+if (word1 != null && word2 != null)
 {
     LongestWord(word1, word2);
 }
@@ -226,9 +226,9 @@ else
 }
 static void LongestWord(string word1, string word2)
 {
-    if (word1.Length == word2.Length) 
+    if (word1.Length == word2.Length)
         Console.WriteLine($"le due parole ({word1} e {word2}) hanno la stessa lunghezza");
-    else if(word1.Length < word2.Length)
+    else if (word1.Length < word2.Length)
         Console.WriteLine($"{word2} è più lunga");
     else
         Console.WriteLine($"{word1} è più lunga");
