@@ -37,8 +37,8 @@ else
 // Snack 2 - Ciclo For
 
 
-/*int[] userNum = new int[10];
-
+int[] userNum = new int[10];
+int sumPartial = 0;
 
 Console.WriteLine("inserisci 10 numeri in successione");
 
@@ -48,20 +48,30 @@ for (int i = 0; i < userNum.Length; i++)
     if (int.TryParse(Console.ReadLine(), out num))
     {
         userNum[i] = num;
+        if (i >= 2)
+        {
+            sumPartial += userNum[i];
+        }
     }
 
     else
         Console.WriteLine("Inserisci numeri validi");
 }
 
-int[] userNumMin2 = new int[8];
-Array.Copy(userNum, 0, userNumMin2, 0, 8);
-int userNumSum = userNum.Sum();
+//metodo con copia di array
+
+/*int[] userNumMin2 = new int[8];
+Array.Copy(userNum, 2, userNumMin2, 0, 8);
 int sumUserNumMin2 = userNumMin2.Sum();
-int avgUserNum= userNumMin2.Sum() / userNumMin2.Length;
+int avgUserNum = userNumMin2.Sum() / userNumMin2.Length;*/
+
+//metodo senza copia di array
+int userNumSum = userNum.Sum();
+
+
 
 Console.WriteLine($"La somma dei numeri inseriti è: {userNumSum}");
-Console.WriteLine($"La somma degli ultimi 8 numeri inseriti è: {sumUserNumMin2} e la loro media è: {avgUserNum}");*/
+Console.WriteLine($"La somma degli ultimi 8 numeri inseriti è: {sumPartial} e la loro media è: {sumPartial/8}");
 
 
 //Snack 3 - Operatore modulo
@@ -84,7 +94,7 @@ else
 
 //festa fitzgerald
 
- string[] partyname = { "nome1", "nome2", "nome3", "nome4", "nome5", "nome6", "nome7", "nome8", "nome9", "nome10" };
+/* string[] partyname = { "nome1", "nome2", "nome3", "nome4", "nome5", "nome6", "nome7", "nome8", "nome9", "nome10" };
 
 Console.WriteLine("Inserisci il tuo nome per vedere se sei invitato a festa Gatsby");
 string? userName = Console.ReadLine();
@@ -149,3 +159,40 @@ int sumTotal = sumTotalOdd.Sum();
 
 Console.WriteLine($"La somma totale degli elementi a indice dispari dell'array è: {sumTotal}");
 
+*/
+
+// Snack 5- Ciclo While
+
+/*Console.WriteLine("Devi continuare a inserire numeri fino a quando la loro somma non sarà maggiore o uguale a 50");
+
+var numSnack5= new List<int>();
+
+while(numSnack5.Sum() <= 50)
+{
+    int newNum;
+    if(int.TryParse(Console.ReadLine(), out newNum))
+        numSnack5.Add(newNum);
+}
+int numSnack5Sum=numSnack5.Sum();
+Console.WriteLine($"Perfetto. La somma dei numeri inseriti è: {numSnack5Sum}");*/
+
+//Random
+
+//Console.WriteLine("Digita un numero casuale");
+//int userRandNum;
+//if(int.TryParse(Console.ReadLine(), out userRandNum))
+//{
+//    int[] arrSquare = new int[userRandNum];
+//    for (int i = 0; i < userRandNum; i++)
+//    {
+//        int[] randomArr = new int[10];
+//        for(int a=0; a < randomArr.Length; a++)
+//        {
+//            Random casualNum = new Random();
+
+//            randomArr[a] = casualNum;
+//        }
+//    }
+//}
+
+        
