@@ -254,7 +254,6 @@ if (int.TryParse(Console.ReadLine(), out primo))
     EvenOdd(primo);
 }
 else Console.WriteLine("Il numero inserito non è valido");
-
 static void EvenOdd(int primo)
 {
     if (primo % 2 == 0) Console.WriteLine($"{primo} è pari");
